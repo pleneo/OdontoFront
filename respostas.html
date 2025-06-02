@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Avaliação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/stylequestions.css" />
+
+</head>
+<body>
+<!-- Cabeçalho com título e imagem -->
+<div class="header-container">
+    <h1 class="page-title">Deixe-nos sua Avaliação!</h1>
+    <img src="../assets/unifor_logo.png" alt="Logo" class="header-image">
+</div>
+
+<!-- Container do formulário -->
+<div class="form-container">
+    <!-- Barra de progresso -->
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 0%;" id="progress-bar"></div>
+    </div>
+
+    <!-- Card da Pergunta 1 (visível inicialmente) -->
+    <div class="card question-card" id="question-1" style="display: block;">
+        <div class="card-body">
+            <h3>1. Como foi sua experiência com os profissionais que lhe atenderam?</h3>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1-option1" value="Ótimo">
+                <label class="form-check-label" for="q1-option1">Ótimo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1-option2" value="Regular">
+                <label class="form-check-label" for="q1-option2">Regular</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1-option3" value="Ruim">
+                <label class="form-check-label" for="q1-option3">Ruim</label>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary next-btn" data-next="question-2">Próxima</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card da Pergunta 2 (oculto inicialmente) -->
+    <div class="card question-card" id="question-2" style="display: none;">
+        <div class="card-body">
+            <h3>2. Você se sente satisfeito com o atendimento realizado?</h3>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2-option1" value="Sim">
+                <label class="form-check-label" for="q2-option1">Sim</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2-option2" value="Não">
+                <label class="form-check-label" for="q2-option2">Não</label>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-secondary prev-btn" data-prev="question-1">Anterior</button>
+                <button class="btn btn-primary next-btn" data-next="question-3">Próxima</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card da Pergunta 3 (última pergunta, com botão "Enviar") -->
+    <div class="card question-card" id="question-3" style="display: none;">
+        <div class="card-body">
+            <h3>3. De 1 a 5, quanto você recomenda este curso?</h3>
+            <div class="btn-group" role="group" aria-label="Escala de 1 a 5">
+                <input type="radio" class="btn-check" name="q3" id="q3-option1" value="1" autocomplete="off">
+                <label class="btn btn-outline-primary" for="q3-option1">1</label>
+
+                <input type="radio" class="btn-check" name="q3" id="q3-option2" value="2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="q3-option2">2</label>
+
+                <input type="radio" class="btn-check" name="q3" id="q3-option3" value="3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="q3-option3">3</label>
+
+                <input type="radio" class="btn-check" name="q3" id="q3-option4" value="4" autocomplete="off">
+                <label class="btn btn-outline-primary" for="q3-option4">4</label>
+
+                <input type="radio" class="btn-check" name="q3" id="q3-option5" value="5" autocomplete="off">
+                <label class="btn btn-outline-primary" for="q3-option5">5</label>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-secondary prev-btn" data-prev="question-2">Anterior</button>
+                <button class="btn btn-success" id="submit-btn">Enviar Respostas</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensagem de sucesso (oculta inicialmente) -->
+    <div class="alert alert-success mt-3" id="success-message" style="display: none;">
+    Respostas enviadas com sucesso!
+    </div>
+</div>
+
+<!-- Rodapé -->
+<div class="footer-container">
+    <footer class="text-center text-white mt-4">
+        <p>&copy; 2023 Avaliação de Curso. Todos os direitos reservados.</p>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/src/script.js"></script>
+</body>
+</html>

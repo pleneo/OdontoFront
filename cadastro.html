@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Clínica Odontológica UNIFOR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/stylecadastro.css">
+</head>
+
+<body>
+    <!-- Cabeçalho com título e imagem -->
+    <div class="header-container">
+        <h1 class="page-title">Avaliação</h1>
+        <img src="/public/assets/unifor_logo.png" alt="Logo" class="header-image">
+    </div>
+
+    <!-- Container do formulário -->
+    <div class="form-container">
+        
+        <h2 class="text-center mb-4" style="color:black">Informe o código do atendimento</h2>
+        <div class="mb-3 d-flex justify-content-center gap-2 flex-wrap">
+            <input type="text" class="form-control" id="taskInput" placeholder="Adicionar novo código" style="max-width: 300px;">
+            <button class="btn btn-primary next-btn" onclick="addTask()" data-next="question-2">Continuar</button>
+        </div>
+        <ul id="taskList" class="list-group mt-3"></ul>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="footer-container">
+        <footer class="text-center text-white mt-4">
+            <p>&copy; 2023 Clínica Odontológica UNIFOR. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./src/script.js"></script>
+</body>
+
+</html>

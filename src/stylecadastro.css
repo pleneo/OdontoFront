@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .header-image {
+        height: 50px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
