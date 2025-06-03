@@ -9,8 +9,9 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         cadastro: resolve(__dirname, 'cadastro.html'),
         obrigado: resolve(__dirname, 'obrigado.html'),
-        respostas: resolve(__dirname, 'respostas.html')
-        // Adicione outras páginas HTML aqui
+        respostas: resolve(__dirname, 'respostas.html'),
+        //script: resolve(__dirname, 'src/script.js')
+                // Adicione outras páginas HTML aqui
       }
     }
   },
