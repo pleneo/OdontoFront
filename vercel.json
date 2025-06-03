@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "version": 2,
+  "public": true, 
+  "rewrites": [
+    { "source": "/cadastro", "destination": "/cadastro.html" },
+    { "source": "/obrigado", "destination": "/obrigado.html" },
+    { "source": "/respostas", "destination": "/respostas.html" }
+
+  ]
 }
