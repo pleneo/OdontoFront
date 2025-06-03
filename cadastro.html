@@ -1,41 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Clínica Odontológica UNIFOR</title>
+    <title>Iniciar Avaliação - Clínica Odontológica UNIFOR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/src/stylecadastro.css">
+    <style>
+        body {
+            background-color: #007bff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .evaluation-message {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            line-height: 1.4;
+        }
+
+        .code-input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+
+        .code-input {
+            width: 120px;
+            height: 50px;
+            font-size: 1.5rem;
+            text-align: center;
+            border-radius: 10px;
+            border: none;
+            padding: 5px;
+        }
+
+        .submit-button {
+            background-color: white;
+            color: #007bff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-button:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                height: 80px;
+            }
+
+            .evaluation-message {
+                font-size: 1.8rem;
+            }
+            
+            .code-input-container {
+                flex-direction: column;
+            }
+            
+            .code-input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Cabeçalho com título e imagem -->
-    <div class="header-container">
-        <h1 class="page-title">Avaliação</h1>
-        <img src="/public/assets/unifor_logo.png" alt="Logo" class="header-image">
-    </div>
+<div class="logo-container">
+    <img src="../assets/unifor_logo.png" alt="Logo UNIFOR" class="logo">
+</div>
 
-    <!-- Container do formulário -->
-    <div class="form-container">
-        
-        <h2 class="text-center mb-4" style="color:black">Informe o código do atendimento</h2>
-        <div class="mb-3 d-flex justify-content-center gap-2 flex-wrap">
-            <input type="text" class="form-control" id="taskInput" placeholder="Adicionar novo código" style="max-width: 300px;">
-            <button class="btn btn-primary next-btn" onclick="addTask()" data-next="question-2">Continuar</button>
-        </div>
-        <ul id="taskList" class="list-group mt-3"></ul>
-    </div>
+<div class="evaluation-message">
+    Digite o código da consulta
+</div>
 
-    <!-- Rodapé -->
-    <div class="footer-container">
-        <footer class="text-center text-white mt-4">
-            <p>&copy; 2023 Clínica Odontológica UNIFOR. Todos os direitos reservados.</p>
-        </footer>
-    </div>
+<div class="code-input-container">
+    <input type="text" class="code-input" id="consultationCode" maxlength="5" pattern="\d*" inputmode="numeric" placeholder="00000">
+    <button class="submit-button" id="submitButton">OK</button>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./src/script.js"></script>
+<div class="footer">
+    <p>&copy; 2025 Clínica Odontológica UNIFOR. Todos os direitos reservados.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Restrict input to numbers only
+    document.getElementById('consultationCode').addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // Add event listener to the OK button
+    document.getElementById('submitButton').addEventListener('click', function() {
+        // Redirect to the answers page
+        window.location.href = 'respostas.html';
+    });
+
+    // Also allow pressing Enter to submit
+    document.getElementById('consultationCode').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            window.location.href = 'respostas.html';
+        }
+    });
+</script>
 </body>
-
 </html>
