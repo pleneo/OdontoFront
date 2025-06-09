@@ -22,73 +22,131 @@
         <div class="progress-bar" role="progressbar" style="width: 0%;" id="progress-bar"></div>
     </div>
 
-    <!-- Card da Pergunta 1 (visível inicialmente) -->
-    <div class="card question-card" id="question-1" style="display: block;">
-        <div class="card-body">
-            <h3>1. Como foi sua experiência com os profissionais que lhe atenderam?</h3>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1-option1" value="Ótimo">
-                <label class="form-check-label" for="q1-option1">Ótimo</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1-option2" value="Regular">
-                <label class="form-check-label" for="q1-option2">Regular</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1-option3" value="Ruim">
-                <label class="form-check-label" for="q1-option3">Ruim</label>
-            </div>
-            <div class="mt-3">
-                <button class="btn btn-primary next-btn" data-next="question-2">Próxima</button>
-            </div>
+    <!-- Pergunta 1 -->
+<div class="card question-card" id="question-1" style="display: block;">
+    <div class="card-body">
+        <h3>1. O que você achou do atendimento do aluno?</h3>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" id="q1-opt1" value="Péssimo">
+            <label class="form-check-label" for="q1-opt1">Péssimo</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" id="q1-opt2" value="Ruim">
+            <label class="form-check-label" for="q1-opt2">Ruim</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" id="q1-opt3" value="Normal">
+            <label class="form-check-label" for="q1-opt3">Normal</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" id="q1-opt4" value="Bom">
+            <label class="form-check-label" for="q1-opt4">Bom</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" id="q1-opt5" value="Ótimo">
+            <label class="form-check-label" for="q1-opt5">Ótimo</label>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary next-btn" data-next="question-2">Próxima</button>
         </div>
     </div>
+</div>
 
-    <!-- Card da Pergunta 2 (oculto inicialmente) -->
-    <div class="card question-card" id="question-2" style="display: none;">
-        <div class="card-body">
-            <h3>2. Você se sente satisfeito com o atendimento realizado?</h3>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2-option1" value="Sim">
-                <label class="form-check-label" for="q2-option1">Sim</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2-option2" value="Não">
-                <label class="form-check-label" for="q2-option2">Não</label>
-            </div>
-            <div class="mt-3">
-                <button class="btn btn-secondary prev-btn" data-prev="question-1">Anterior</button>
-                <button class="btn btn-primary next-btn" data-next="question-3">Próxima</button>
-            </div>
+<!-- Pergunta 2 -->
+<div class="card question-card" id="question-2" style="display: none;">
+    <div class="card-body">
+        <h3>2. De 0 a 5, avalie a limpeza do local:</h3>
+        <div class="btn-group" role="group">
+            <input type="radio" class="btn-check" name="q2" id="q2-0" value="0" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q2-0">0</label>
+            <input type="radio" class="btn-check" name="q2" id="q2-1" value="1" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q2-1">1</label>
+            <input type="radio" class="btn-check" name="q2" id="q2-2" value="2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q2-2">2</label>
+            <input type="radio" class="btn-check" name="q2" id="q2-3" value="3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q2-3">3</label>
+            <input type="radio" class="btn-check" name="q2" id="q2-4" value="4" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q2-4">4</label>
+            <input type="radio" class="btn-check" name="q2" id="q2-5" value="5" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q2-5">5</label>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-secondary prev-btn" data-prev="question-1">Anterior</button>
+            <button class="btn btn-primary next-btn" data-next="question-3">Próxima</button>
         </div>
     </div>
+</div>
 
-    <!-- Card da Pergunta 3 (última pergunta, com botão "Enviar") -->
-    <div class="card question-card" id="question-3" style="display: none;">
-        <div class="card-body">
-            <h3>3. De 1 a 5, quanto você recomenda este curso?</h3>
-            <div class="btn-group" role="group" aria-label="Escala de 1 a 5">
-                <input type="radio" class="btn-check" name="q3" id="q3-option1" value="1" autocomplete="off">
-                <label class="btn btn-outline-primary" for="q3-option1">1</label>
-
-                <input type="radio" class="btn-check" name="q3" id="q3-option2" value="2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="q3-option2">2</label>
-
-                <input type="radio" class="btn-check" name="q3" id="q3-option3" value="3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="q3-option3">3</label>
-
-                <input type="radio" class="btn-check" name="q3" id="q3-option4" value="4" autocomplete="off">
-                <label class="btn btn-outline-primary" for="q3-option4">4</label>
-
-                <input type="radio" class="btn-check" name="q3" id="q3-option5" value="5" autocomplete="off">
-                <label class="btn btn-outline-primary" for="q3-option5">5</label>
-            </div>
-            <div class="mt-3">
-                <button class="btn btn-secondary prev-btn" data-prev="question-2">Anterior</button>
-                <button class="btn btn-success" id="submit-btn">Enviar Respostas</button>
-            </div>
+<!-- Pergunta 3 -->
+<div class="card question-card" id="question-3" style="display: none;">
+    <div class="card-body">
+        <h3>3. Avalie, de 0 a 5, o tempo de espera para ser atendido:</h3>
+        <div class="btn-group" role="group">
+            <input type="radio" class="btn-check" name="q3" id="q3-0" value="0" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q3-0">0</label>
+            <input type="radio" class="btn-check" name="q3" id="q3-1" value="1" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q3-1">1</label>
+            <input type="radio" class="btn-check" name="q3" id="q3-2" value="2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q3-2">2</label>
+            <input type="radio" class="btn-check" name="q3" id="q3-3" value="3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q3-3">3</label>
+            <input type="radio" class="btn-check" name="q3" id="q3-4" value="4" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q3-4">4</label>
+            <input type="radio" class="btn-check" name="q3" id="q3-5" value="5" autocomplete="off">
+            <label class="btn btn-outline-primary" for="q3-5">5</label>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-secondary prev-btn" data-prev="question-2">Anterior</button>
+            <button class="btn btn-primary next-btn" data-next="question-4">Próxima</button>
         </div>
     </div>
+</div>
+
+<!-- Pergunta 4 -->
+<div class="card question-card" id="question-4" style="display: none;">
+    <div class="card-body">
+        <h3>4. Quão barulhento é a sala de espera?</h3>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q4" id="q4-op1" value="Pouco">
+            <label class="form-check-label" for="q4-op1">Pouco</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q4" id="q4-op2" value="Normal">
+            <label class="form-check-label" for="q4-op2">Normal</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q4" id="q4-op3" value="Muito">
+            <label class="form-check-label" for="q4-op3">Muito</label>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-secondary prev-btn" data-prev="question-3">Anterior</button>
+            <button class="btn btn-primary next-btn" data-next="question-5">Próxima</button>
+        </div>
+    </div>
+</div>
+
+<!-- Pergunta 5 -->
+<div class="card question-card" id="question-5" style="display: none;">
+    <div class="card-body">
+        <h3>5. Avalie, de 0 a 10, sua experiência com a clínica:</h3>
+        <div class="btn-group" role="group" style="flex-wrap: wrap;">
+            <!-- Geração dinâmica de 0 a 10 -->
+            <script>
+                for (let i = 0; i <= 10; i++) {
+                    document.write(`
+                        <input type="radio" class="btn-check" name="q5" id="q5-${i}" value="${i}" autocomplete="off">
+                        <label class="btn btn-outline-primary m-1" for="q5-${i}">${i}</label>
+                    `);
+                }
+            </script>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-secondary prev-btn" data-prev="question-4">Anterior</button>
+            <button class="btn btn-success" id="submit-btn">Enviar Respostas</button>
+        </div>
+    </div>
+</div>
+
 
     <!-- Mensagem de sucesso (oculta inicialmente) -->
     <div class="alert alert-success mt-3" id="success-message" style="display: none;">
